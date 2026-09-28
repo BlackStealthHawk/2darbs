@@ -1,2 +1,5 @@
 res://scenes/MovementLab.tscn
 res://scripts/Mover.cs
+res://scenes/Player.tscn
+res://scenes/Player.cs
+res://scenes/Level1.tscn
