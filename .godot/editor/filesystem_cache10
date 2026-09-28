@@ -1,0 +1,8 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1790573848
+icon.svg::CompressedTexture2D::4817894111877080472::1790572136::1790573848::1::::<><><>0<>0<>d089b273879588d6d4092fc8ee3b874f<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://scenes/::1790573562
+MovementLab.tscn::PackedScene::7682239716773449380::1790573860::0::1::::<><><>0<>0<><>::uid://mc61xnvti75d::::res://scenes/Mover.cs
+movement_lab.tscn::PackedScene::2755866642279562726::1790573421::0::1::::<><><>0<>0<><>::
+::res://scripts/::1790572062
+Mover.cs::CSharpScript::848324765681193295::1790573562::0::1::::<><><>0<>0<><>::
