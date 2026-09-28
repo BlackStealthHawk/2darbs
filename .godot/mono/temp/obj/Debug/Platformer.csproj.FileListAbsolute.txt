@@ -15,3 +15,4 @@
 /Users/markussniedols/Desktop/programesana/2darbs/.godot/mono/temp/obj/Debug/Platformer.pdb
 /Users/markussniedols/Desktop/programesana/2darbs/.godot/mono/temp/obj/Debug/Platformer.genruntimeconfig.cache
 /Users/markussniedols/Desktop/programesana/2darbs/.godot/mono/temp/obj/Debug/ref/Platformer.dll
+/Users/markussniedols/Desktop/programesana/2darbs/.godot/mono/temp/obj/Debug/Platformer.sourcelink.json

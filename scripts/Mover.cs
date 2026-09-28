@@ -8,7 +8,7 @@ public partial class Mover : Node2D
 
 	{
 		
-		Position += new Vector2(Speed, 0) * (float)delta;
+		Position += new Vector2(Speed, 0) ;
 		if (Position.X > 1200)
 			Position = new Vector2(80, Position.Y);
 	}
