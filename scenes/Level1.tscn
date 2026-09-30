@@ -2,6 +2,55 @@
 
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://scenes/Player.tscn" id="1_6ovph"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvo5p"]
+size = Vector2(1280, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vujuh"]
+size = Vector2(160, 20)
+
 [node name="Level1" type="Node2D" unique_id=1806382298]
 
 [node name="Player" parent="." unique_id=1679798157 instance=ExtResource("1_6ovph")]
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=1950181536]
+position = Vector2(640, 660)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=1787601963]
+shape = SubResource("RectangleShape2D_xvo5p")
+
+[node name="Visual" type="Polygon2D" parent="ground" unique_id=1178938833]
+color = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-640, -20, 640, -20, 640, 20, -640, 20)
+
+[node name="platforma1" type="StaticBody2D" parent="." unique_id=1992515928]
+position = Vector2(280, 560)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforma1" unique_id=1017875028]
+shape = SubResource("RectangleShape2D_vujuh")
+
+[node name="Polygon2D" type="Polygon2D" parent="platforma1" unique_id=1804402529]
+polygon = PackedVector2Array(-80, -10, 80, -10, 80, 10, -80, 10)
+
+[node name="platforma2" type="StaticBody2D" parent="." unique_id=660592401]
+position = Vector2(480, 470)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforma2" unique_id=370305403]
+shape = SubResource("RectangleShape2D_vujuh")
+
+[node name="Polygon2D" type="Polygon2D" parent="platforma2" unique_id=1848710704]
+polygon = PackedVector2Array(-80, -10, 80, -10, 80, 10, -80, 10)
+
+[node name="platforma3" type="StaticBody2D" parent="." unique_id=2066023933]
+position = Vector2(680, 380)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforma3" unique_id=578888817]
+shape = SubResource("RectangleShape2D_vujuh")
+
+[node name="Polygon2D" type="Polygon2D" parent="platforma3" unique_id=715165663]
+polygon = PackedVector2Array(-80, -10, 80, -10, 80, 10, -80, 10)
