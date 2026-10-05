@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://wfjvoibvumck"]
+
+[ext_resource type="Script" uid="uid://cgligmt8jmo2i" path="res://scenes/Pickup.cs" id="1_pg2rt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vujuh"]
+radius = 12.0
+
+[node name="pickup" type="Area2D" unique_id=1081487211]
+collision_layer = 1
+collision_mask = 2
+script = ExtResource("1_pg2rt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998084228]
+light_mask = 2
+visibility_layer = 4
+shape = SubResource("CircleShape2D_vujuh")
+
+[node name="visual" type="Polygon2D" parent="." unique_id=1459677965]
+color = Color(0.99999934, 0.98926204, 0.45126718, 1)
+polygon = PackedVector2Array(0, -12, 12, 0, 0, 12, -12, 0)
+uv = PackedVector2Array(154, -30)

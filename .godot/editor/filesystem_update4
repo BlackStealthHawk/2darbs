@@ -1,0 +1,6 @@
+res://scenes/pickup.tscn
+res://scenes/MovementLab.tscn
+res://scenes/Pickup.cs
+res://scenes/Player.cs
+res://scripts/Mover.cs
+res://scenes/Level1.tscn

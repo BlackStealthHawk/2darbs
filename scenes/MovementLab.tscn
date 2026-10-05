@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhplmo2jsdsf1"]
 
 [ext_resource type="Script" uid="uid://mc61xnvti75d" path="res://scripts/Mover.cs" id="1_j23q4"]
+[ext_resource type="PackedScene" uid="uid://wfjvoibvumck" path="res://scenes/pickup.tscn" id="2_x1llb"]
 
 [sub_resource type="GDScript" id="GDScript_x1llb"]
 script/source = "extends Node2D
@@ -26,3 +27,5 @@ script = ExtResource("1_j23q4")
 [node name="Visual" type="Polygon2D" parent="Mover" unique_id=835336983]
 polygon = PackedVector2Array(-16, -24, 16, -24, 16, 24, -16, 24)
 uv = PackedVector2Array(74, -220, 296, -222, 299, -64, 87, -61)
+
+[node name="pickup" parent="." unique_id=1081487211 instance=ExtResource("2_x1llb")]

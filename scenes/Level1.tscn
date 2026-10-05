@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ch7lxc3ysrljr"]
 
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://scenes/Player.tscn" id="1_6ovph"]
+[ext_resource type="PackedScene" uid="uid://wfjvoibvumck" path="res://scenes/pickup.tscn" id="2_bwv4p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvo5p"]
 size = Vector2(1280, 40)
@@ -11,6 +12,7 @@ size = Vector2(160, 20)
 [node name="Level1" type="Node2D" unique_id=1806382298]
 
 [node name="Player" parent="." unique_id=1679798157 instance=ExtResource("1_6ovph")]
+light_mask = 15
 
 [node name="ground" type="StaticBody2D" parent="." unique_id=1950181536]
 position = Vector2(640, 660)
@@ -24,8 +26,6 @@ polygon = PackedVector2Array(-640, -20, 640, -20, 640, 20, -640, 20)
 
 [node name="platforma1" type="StaticBody2D" parent="." unique_id=1992515928]
 position = Vector2(280, 560)
-collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforma1" unique_id=1017875028]
 shape = SubResource("RectangleShape2D_vujuh")
@@ -35,8 +35,6 @@ polygon = PackedVector2Array(-80, -10, 80, -10, 80, 10, -80, 10)
 
 [node name="platforma2" type="StaticBody2D" parent="." unique_id=660592401]
 position = Vector2(480, 470)
-collision_layer = 4
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforma2" unique_id=370305403]
 shape = SubResource("RectangleShape2D_vujuh")
@@ -46,11 +44,31 @@ polygon = PackedVector2Array(-80, -10, 80, -10, 80, 10, -80, 10)
 
 [node name="platforma3" type="StaticBody2D" parent="." unique_id=2066023933]
 position = Vector2(680, 380)
-collision_layer = 8
-collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforma3" unique_id=578888817]
 shape = SubResource("RectangleShape2D_vujuh")
 
 [node name="Polygon2D" type="Polygon2D" parent="platforma3" unique_id=715165663]
 polygon = PackedVector2Array(-80, -10, 80, -10, 80, 10, -80, 10)
+
+[node name="coin1" parent="." unique_id=1081487211 instance=ExtResource("2_bwv4p")]
+position = Vector2(150, 600)
+
+[node name="coin2" parent="." unique_id=256971216 instance=ExtResource("2_bwv4p")]
+position = Vector2(280, 525)
+
+[node name="coin3" parent="." unique_id=167567905 instance=ExtResource("2_bwv4p")]
+position = Vector2(600, 600)
+
+[node name="coin4" parent="." unique_id=1214407159 instance=ExtResource("2_bwv4p")]
+position = Vector2(1050, 600)
+
+[node name="key" parent="." unique_id=859342190 instance=ExtResource("2_bwv4p")]
+modulate = Color(0.7273038, 0.35498148, 0.14095822, 1)
+position = Vector2(680, 345)
+Type = 2
+
+[node name="gem" parent="." unique_id=606728476 instance=ExtResource("2_bwv4p")]
+modulate = Color(0.23529412, 1, 0.2509804, 1)
+position = Vector2(480, 435)
+Type = 1
