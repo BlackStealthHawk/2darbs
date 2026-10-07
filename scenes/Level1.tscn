@@ -116,7 +116,7 @@ shape = SubResource("RectangleShape2D_keayq")
 
 [node name="Polygon2D" type="Polygon2D" parent="hazard" unique_id=1909490389]
 color = Color(0.8996588, 0.08733978, 0.18353495, 1)
-polygon = PackedVector2Array(-40, -15, 40, -15, 40, 15, -40, 15)
+polygon = PackedVector2Array(33.146084, -3.0554733, 38.256897, -14.416903, 40, 15, -40, 15, -38.612762, -14.96263, -28.867624, 10.062889, -20.369862, -3.0345783, -6.6487045, 9.127356, 1.5372124, -13.403408, 11.90604, 6.866482, 20.247879, -1.70924, 26.663898, 9.908899, 30.320515, 1.9308243, 27.162525, -9.20524)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1020122920]
 
