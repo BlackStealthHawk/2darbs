@@ -1,12 +1,12 @@
 using Godot;
 
-using Godot;
-
 public enum PickupType { Coin, Gem, Key }
 
 public partial class Player : CharacterBody2D
 {
 	[Export] public float Speed = 300.0f;
+	[Export] public float Gravity = 980.0f;
+	[Export] public float JumpVelocity = -550.0f;
 
 	public int Score { get; private set; } = 0;
 	public bool HasKey { get; private set; } = false;
@@ -14,13 +14,21 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		Vector2 direction = Vector2.Zero;
-		if (Input.IsActionPressed("move_left")) direction.X -= 1;
-		if (Input.IsActionPressed("move_right")) direction.X += 1;
-		if (Input.IsActionPressed("move_up")) direction.Y -= 1;
-		if (Input.IsActionPressed("move_down")) direction.Y += 1;
+		if (!IsActive)
+		{
+			Velocity = Vector2.Zero;
+			return;
+		}
 
-		Velocity = direction.Normalized() * Speed;
+		Vector2 velocity = Velocity;
+		if (!IsOnFloor())
+			velocity.Y += Gravity * (float)delta;
+
+		if (Input.IsActionJustPressed("jump") && IsOnFloor())
+	velocity.Y = JumpVelocity;
+	
+		velocity.X = Input.GetAxis("move_left", "move_right") * Speed;
+		Velocity = velocity;
 		MoveAndSlide();
 	}
 

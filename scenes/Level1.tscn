@@ -13,6 +13,9 @@ size = Vector2(160, 20)
 
 [node name="Player" parent="." unique_id=1679798157 instance=ExtResource("1_6ovph")]
 light_mask = 15
+position = Vector2(80, 550)
+Gravity = 1200.0
+JumpVelocity = -650.0
 
 [node name="ground" type="StaticBody2D" parent="." unique_id=1950181536]
 position = Vector2(640, 660)
