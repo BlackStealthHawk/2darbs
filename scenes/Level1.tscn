@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ch7lxc3ysrljr"]
 
 [ext_resource type="PackedScene" uid="uid://pbmoqjvodepq" path="res://scenes/Player.tscn" id="1_6ovph"]
+[ext_resource type="Script" uid="uid://bhjv8via1mkmo" path="res://scenes/Level1.cs" id="1_odhdn"]
 [ext_resource type="PackedScene" uid="uid://wfjvoibvumck" path="res://scenes/pickup.tscn" id="2_bwv4p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvo5p"]
@@ -9,7 +10,18 @@ size = Vector2(1280, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vujuh"]
 size = Vector2(160, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u6g6"]
+size = Vector2(48, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_keayq"]
+size = Vector2(80, 30)
+
 [node name="Level1" type="Node2D" unique_id=1806382298]
+script = ExtResource("1_odhdn")
+GameTitle = "Indiana Jones"
+Mission = "Atrodi zelta atslēgu un sasniedz zaļo bāku. Izvairies no sarkanās bedres!"
+WinText = "Esi ticis ārā"
+LoseText = "Paliki kapenēs"
 
 [node name="Player" parent="." unique_id=1679798157 instance=ExtResource("1_6ovph")]
 light_mask = 15
@@ -34,7 +46,8 @@ position = Vector2(280, 560)
 shape = SubResource("RectangleShape2D_vujuh")
 
 [node name="Polygon2D" type="Polygon2D" parent="platforma1" unique_id=1804402529]
-polygon = PackedVector2Array(-80, -10, 80, -10, 80, 10, -80, 10)
+color = Color(0.57254905, 0.3529412, 0.11764706, 1)
+polygon = PackedVector2Array(-80, -10, 80, -10, 80, 10, 39.944458, 10.01124, 36.12001, 20.78924, 30.209488, 10.532757, 20.648361, 10.01124, 15.60704, 24.96137, 7.0889435, 10.18508, -10.99028, 9.142046, -13.4240265, 17.486303, -16.900803, 9.142046, -28.026482, 9.837402, -32.720123, 22.353788, -37.23993, 9.837402, -80, 10)
 
 [node name="platforma2" type="StaticBody2D" parent="." unique_id=660592401]
 position = Vector2(480, 470)
@@ -43,7 +56,8 @@ position = Vector2(480, 470)
 shape = SubResource("RectangleShape2D_vujuh")
 
 [node name="Polygon2D" type="Polygon2D" parent="platforma2" unique_id=1848710704]
-polygon = PackedVector2Array(-80, -10, 80, -10, 80, 10, -80, 10)
+color = Color(0.57254905, 0.3529412, 0.11764706, 1)
+polygon = PackedVector2Array(-80, -10, 80, -10, 80, 10, 49.89778, 11.61359, 41.940994, 42.66444, 28.356247, 21.899185, 26.221512, 56.831387, 19.6232, 22.481388, 4.874054, 22.481388, -2.500534, 47.7102, -23.654, 10, -80, 10)
 
 [node name="platforma3" type="StaticBody2D" parent="." unique_id=2066023933]
 position = Vector2(680, 380)
@@ -52,7 +66,8 @@ position = Vector2(680, 380)
 shape = SubResource("RectangleShape2D_vujuh")
 
 [node name="Polygon2D" type="Polygon2D" parent="platforma3" unique_id=715165663]
-polygon = PackedVector2Array(-80, -10, 80, -10, 80, 10, -80, 10)
+color = Color(0.57254905, 0.3529412, 0.11764706, 1)
+polygon = PackedVector2Array(-80, -10, 80, -10, 80, 10, 46.359, 10, 39.697662, 36.315334, 31.579, 10, -0.065, 10, -10.681717, 55.88419, -22.132, 10, -40.868, 10, -43.99041, 25.906376, -47.946, 10.04, -80, 10)
 
 [node name="coin1" parent="." unique_id=1081487211 instance=ExtResource("2_bwv4p")]
 position = Vector2(150, 600)
@@ -75,3 +90,56 @@ Type = 2
 modulate = Color(0.23529412, 1, 0.2509804, 1)
 position = Vector2(480, 435)
 Type = 1
+
+[node name="Finish" type="Area2D" parent="." unique_id=1652918613]
+position = Vector2(850, 590)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish" unique_id=859560670]
+shape = SubResource("RectangleShape2D_0u6g6")
+
+[node name="visual" type="Polygon2D" parent="Finish" unique_id=708050445]
+color = Color(4.5724212e-07, 0.49748433, 0.21322313, 1)
+polygon = PackedVector2Array(-24, -50, 24, -50, 24, 50, -24, 50)
+uv = PackedVector2Array(-24, -50, 24, -50, 24, 50, -24, 50)
+
+[node name="hazard" type="Area2D" parent="." unique_id=646229432]
+light_mask = 2
+visibility_layer = 4
+position = Vector2(440, 625)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hazard" unique_id=2073565219]
+shape = SubResource("RectangleShape2D_keayq")
+
+[node name="Polygon2D" type="Polygon2D" parent="hazard" unique_id=1909490389]
+color = Color(0.8996588, 0.08733978, 0.18353495, 1)
+polygon = PackedVector2Array(-40, -15, 40, -15, 40, 15, -40, 15)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1020122920]
+
+[node name="Instructions" type="Label" parent="HUD" unique_id=353475985]
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 1260.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="Status" type="Label" parent="HUD" unique_id=1910635214]
+offset_left = 20.0
+offset_top = 48.0
+offset_right = 1260.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="Message" type="Label" parent="HUD" unique_id=958454133]
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 1260.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3

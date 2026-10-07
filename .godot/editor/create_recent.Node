@@ -1,5 +1,8 @@
-Polygon2D
+Label
+CanvasLayer
 CollisionShape2D
+Polygon2D
 Area2D
+CollisionPolygon2D
 StaticBody2D
 CharacterBody2D

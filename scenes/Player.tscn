@@ -11,7 +11,8 @@ collision_layer = 2
 script = ExtResource("1_p0vlq")
 
 [node name="Visual" type="Polygon2D" parent="." unique_id=838963946]
-polygon = PackedVector2Array(-16, -24, 16, -24, 16, 24, -16, 24)
+color = Color(1, 1, 0.019607844, 1)
+polygon = PackedVector2Array(-6.76445, -29.801765, -0.16933441, -37.584007, 6.0300827, -28.218937, 4.051544, -20.964304, 12.625198, -20.17289, 16.769943, -3.3660736, 20.595116, 27.235287, 9.779114, 28.158604, 1.7330704, 9.95607, -8.951027, 27.235287, -18.447998, 26.048168, -19.898926, 0.19529343, -14.75473, -19.458166, -4.4663467, -19.985777)
 uv = PackedVector2Array(74, -220, 296, -222, 299, -64, 87, -61)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=629276297]

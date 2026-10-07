@@ -4,3 +4,5 @@ res://scenes/Pickup.cs
 res://scenes/Player.cs
 res://scripts/Mover.cs
 res://scenes/Level1.tscn
+res://scenes/Level1.cs
+res://scenes/Player.tscn
